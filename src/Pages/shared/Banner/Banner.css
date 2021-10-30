@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+.banner{
+    
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+}
+.overlay{
+    
+    height: 600px;
+}
+.overlay img{
+    height: 600px;
+    width: 100%;
+    opacity: 0.4;
+}
+
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.content h1{
+    font-size: 40px;
+    color: rgb(45, 116, 62);
+}
