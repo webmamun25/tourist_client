@@ -7,6 +7,8 @@ import {
 } from 'react-router-dom';
 
 import AuthProvider from './contexts/Authprovider';
+import About from './Pages/About/About';
+import Blog from './Pages/Blog/Blog';
 import Home from './Pages/Home/Home';
 import Manage from './Pages/Manage/Manage';
 import Myorders from './Pages/Myorders/Myorders';
@@ -20,12 +22,11 @@ import Notfound from './Pages/shared/Notfound/Notfound';
 import Places from './Places/Places';
 
 function App() {
-
   return (
     <div className="App">
       <AuthProvider>
         <Router>
-        <Header></Header>
+          <Header></Header>
           <Switch>
             <Route exact path="/">
               <Home></Home>
@@ -36,9 +37,7 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
-            <Route path="/register">
-              {/* <Register></Register> */}
-            </Route>
+            <Route path="/register">{/* <Register></Register> */}</Route>
             <Route path="/places">
               <Places></Places>
             </Route>
@@ -46,11 +45,12 @@ function App() {
               <Order></Order>
             </PrivateRoute>
             <Route path="/about">
-              {/* <About></About> */}
+              <About></About>
             </Route>
-            <Route path="/article">
-              {/* <Article></Article> */}
+            <Route path="/blog">
+              <Blog></Blog>
             </Route>
+            <Route path="/article">{/* <Article></Article> */}</Route>
             <PrivateRoute path="/myorders">
               <Myorders></Myorders>
             </PrivateRoute>
@@ -68,7 +68,7 @@ function App() {
         </Router>
       </AuthProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

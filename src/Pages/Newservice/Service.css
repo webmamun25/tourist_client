@@ -1,0 +1,18 @@
+.serviceform {
+  margin: 20px 30px;
+  width: 500px;
+}
+.serviceform form {
+  width: 500px;
+  margin-left: 500px;
+}
+
+.serviceform form input {
+  padding: 10px;
+  display: block;
+  margin: 20px;
+}
+.serviceform form textarea {
+  margin-left: -160px;
+  width: 300px;
+}

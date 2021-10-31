@@ -1,11 +1,35 @@
+import './Service.css';
+
 import React from 'react';
 
-const Service = () => {
-    return (
-        <div>
-            this is service
-        </div>
-    );
-};
+import axios from 'axios';
+import { useForm } from 'react-hook-form';
 
-export default Service;
+const Service = () => {
+  const { register, handleSubmit, reset } = useForm()
+
+  const onSubmit = (data) => {
+    axios.post('http://localhost:7000/newservice', data).then((res) => {
+      if (res.data.insertedId) {
+        alert('successfull Addition thank You')
+        reset()
+      }
+    })
+  }
+  return (
+    <div className="serviceform">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input
+          {...register('name', { required: true, maxLength: 20 })}
+          placeholder="Name"
+        />
+
+        <textarea {...register('description')} placeholder="Description" />
+        <input {...register('imageurl')} placeholder="Choose an image" />
+        <input type="submit" />
+      </form>
+    </div>
+  )
+}
+
+export default Service
