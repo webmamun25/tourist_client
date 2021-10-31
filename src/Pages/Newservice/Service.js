@@ -9,12 +9,14 @@ const Service = () => {
   const { register, handleSubmit, reset } = useForm()
 
   const onSubmit = (data) => {
-    axios.post('http://localhost:7000/newservice', data).then((res) => {
-      if (res.data.insertedId) {
-        alert('successfull Addition thank You')
-        reset()
-      }
-    })
+    axios
+      .post('https://ghoulish-cat-83697.herokuapp.com/newservice', data)
+      .then((res) => {
+        if (res.data.insertedId) {
+          alert('successfull Addition thank You')
+          reset()
+        }
+      })
   }
   return (
     <div className="serviceform">

@@ -16,7 +16,7 @@ const Order = () => {
   const [details, setDetails] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:7000/places')
+    fetch('https://ghoulish-cat-83697.herokuapp.com/places')
       .then((res) => res.json())
       .then((data) => setDetails(data))
   }, [setDetails])
@@ -27,7 +27,7 @@ const Order = () => {
     data.useremail = user.email
     console.log(data)
 
-    fetch('http://localhost:7000/placeorder', {
+    fetch('https://ghoulish-cat-83697.herokuapp.com/placeorder', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(data),

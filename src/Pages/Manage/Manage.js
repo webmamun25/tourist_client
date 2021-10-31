@@ -6,7 +6,7 @@ import React, {
 const Manage = () => {
   const [alluserOrder, setalluserOrder] = useState([])
   useEffect(() => {
-    fetch('http://localhost:7000/myorders')
+    fetch('https://ghoulish-cat-83697.herokuapp.com/myorders')
       .then((res) => res.json())
       .then((data) => setalluserOrder(data))
   }, [])
@@ -15,7 +15,7 @@ const Manage = () => {
     const agree = window.confirm('Please think second time to Delete it')
 
     if (agree) {
-      const url = `http://localhost:7000/myorders/${id}`
+      const url = `https://ghoulish-cat-83697.herokuapp.com/myorders/${id}`
 
       fetch(url, {
         method: 'DELETE',
