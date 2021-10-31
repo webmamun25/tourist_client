@@ -10,7 +10,7 @@ const Myorders = () => {
   const useremail = user.email
   const [allorder, setAllorder] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:7000/myorders/${useremail}`)
+    fetch(`https://ghoulish-cat-83697.herokuapp.com/myorders/${useremail}`)
       .then((res) => res.json())
       .then((data) => setAllorder(data))
   }, [useremail])
@@ -18,7 +18,7 @@ const Myorders = () => {
     const agree = window.confirm('You take a risky decision')
 
     if (agree) {
-      const url = `http://localhost:7000/myorders/${useremail}/${id}`
+      const url = `https://ghoulish-cat-83697.herokuapp.com/myorders/${useremail}/${id}`
 
       fetch(url, {
         method: 'DELETE',
